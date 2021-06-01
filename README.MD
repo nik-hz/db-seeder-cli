@@ -10,6 +10,6 @@ npm i -g db-seeder-cli
 ```
 
 ```
-db-seeder <location of seed data> <apiUrl>
+db-seeder-cli <location of seed data> <apiUrl>
 
 ```
