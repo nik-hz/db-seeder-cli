@@ -4,6 +4,9 @@ a db seeder cli tool, run from the command line to seed or test under load your 
 
 ## Usage
 
+https://www.npmjs.com/package/db-seeder-cli
+
+
 ```
 npm i -g db-seeder-cli
 
