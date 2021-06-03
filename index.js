@@ -1,31 +1,13 @@
 #!/usr/bin/env node
+const clear = require('clear')
+const chalk = require('chalk')
+const figlet = require('figlet')
+const dbSeeder = require('./dbseeder')
 
-const axios = require('axios')
+clear()
 
-const dbSeeder = async (seedDataLocation, apiUrl) => {
-    console.log('FIRST ARG - seed data location', seedDataLocation)
-    console.log('SECOND ARG - api url', apiUrl)
-
-    const seedData = require(seedDataLocation)
-    console.log(seedData)
-
-    try {
-        for (let item of seedData) {
-            const postreq = await axios.post(apiUrl, item)
-
-            console.log(postreq, 'succesfully sent')
-        }
-    } catch (error) {
-        console.log('')
-        console.log('')
-        console.log('THERE SEEMS TO BE A PROBLEM')
-        console.log('')
-        console.log('FIRST ARG - seed data location', seedDataLocation)
-        console.log('SECOND ARG - api url', apiUrl)
-        console.log('')
-        console.log('')
-        console.error(error.message)
-    }
-}
+console.log(
+    chalk.yellow(figlet.textSync('DB-Seeder', { horizontalLayout: 'full' }))
+)
 
 dbSeeder(process.argv[2], process.argv[3])
