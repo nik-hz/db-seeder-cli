@@ -24,7 +24,10 @@ const dbSeeder = async (seedDataLocation, apiUrl) => {
         console.log('SECOND ARG - api url', apiUrl)
         console.log('')
         console.log('')
+        console.log('Error Mesage')
         console.log(error.message)
+        console.log('')
+        console.log('')
     }
 }
 
