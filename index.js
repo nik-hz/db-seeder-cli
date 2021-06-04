@@ -1,10 +1,12 @@
 #!/usr/bin/env node
-
 const axios = require('axios')
+const chalk = require('chalk')
 
 const dbSeeder = async (seedDataLocation, apiUrl) => {
-    console.log('FIRST ARG - seed data location', seedDataLocation)
-    console.log('SECOND ARG - api url', apiUrl)
+    console.log('')
+    console.log('')
+    console.log(chalk.green('FIRST ARG - seed data location', seedDataLocation))
+    console.log(chalk.green('SECOND ARG - api url', apiUrl))
 
     // console.log(seedData)
 
@@ -18,14 +20,16 @@ const dbSeeder = async (seedDataLocation, apiUrl) => {
     } catch (error) {
         console.log('')
         console.log('')
-        console.log('THERE SEEMS TO BE A PROBLEM')
+        console.log(chalk.red('THERE SEEMS TO BE A PROBLEM'))
         console.log('')
-        console.log('FIRST ARG - seed data location', seedDataLocation)
-        console.log('SECOND ARG - api url', apiUrl)
+        console.log(
+            chalk.red('FIRST ARG - seed data location', seedDataLocation)
+        )
+        console.log(chalk.red('SECOND ARG - api url', apiUrl))
         console.log('')
         console.log('')
-        console.log('Error Mesage')
-        console.log(error.message)
+        console.log(chalk.red('Error Mesage'))
+        console.log(chalk.red(error.message))
         console.log('')
         console.log('')
     }
