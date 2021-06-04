@@ -6,10 +6,10 @@ const dbSeeder = async (seedDataLocation, apiUrl) => {
     console.log('FIRST ARG - seed data location', seedDataLocation)
     console.log('SECOND ARG - api url', apiUrl)
 
-    const seedData = require(seedDataLocation)
-    console.log(seedData)
+    // console.log(seedData)
 
     try {
+        const seedData = require(seedDataLocation)
         for (let item of seedData) {
             const postreq = await axios.post(apiUrl, item)
 
