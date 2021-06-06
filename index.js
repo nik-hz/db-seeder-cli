@@ -12,10 +12,29 @@ const dbSeeder = async (seedDataLocation, apiUrl) => {
 
     try {
         const seedData = require(seedDataLocation)
-        for (let item of seedData) {
-            const postreq = await axios.post(apiUrl, item)
+        const length = seedData.length
 
-            console.log(postreq, 'succesfully sent')
+        for (let i = 0; i <= length; i++) {
+            const countI = i
+            const countLength = length
+            if (length < 1000) {
+                countI = i / 100
+                countLength = length / 100
+            }
+
+            const dots = '|'.repeat(countI)
+            const left = countLength - countI
+            const empty = ' '.repeat(left)
+
+            process.stdout.write(
+                `\r[${dots}${empty}] ${i} / ${length}, ${Math.round(
+                    (i / length) * 100
+                )}%`
+            )
+            await axios.post(apiUrl, seedData[i])
+            if (i === length) {
+                break
+            }
         }
     } catch (error) {
         console.log('')
