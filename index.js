@@ -19,8 +19,8 @@ const dbSeeder = async (seedDataLocation, apiUrl) => {
             let countLength = length
 
             if (length > 1000) {
-                countI = Math.round(i / 100)
-                countLength = Math.round(length / 100)
+                countI = Math.round(i / 200)
+                countLength = Math.round(length / 200)
             }
 
             const dots = '|'.repeat(countI)
