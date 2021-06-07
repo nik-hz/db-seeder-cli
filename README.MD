@@ -8,6 +8,8 @@ will iterate through large sets of data like JSON arrays and send objects one by
 
 https://www.npmjs.com/package/db-seeder-cli
 
+https://github.com/nik-hz/db-seeder-cli
+
 ```
 npm i -g db-seeder-cli
 
